@@ -108,7 +108,7 @@ public class MenuTreinador extends JFrame {
 					if (resposta == JOptionPane.YES_OPTION) {
 						ArquivoGeral arq = new ArquivoGeral(TelaLogin.t1);
 						try {
-							JOptionPane.showMessageDialog(null, arq.removeObjeto(UsuarioUtil.retornaIndexTreinador(TelaLogin.t1.getLogin())));
+							JOptionPane.showMessageDialog(null, arq.remover(UsuarioUtil.retornaIndexTreinador(TelaLogin.t1.getLogin())));
 							Main.getFrame().setVisible(true);
 							dispose();
 						} catch (ClassNotFoundException e1) {

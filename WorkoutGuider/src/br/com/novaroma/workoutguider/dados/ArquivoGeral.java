@@ -91,18 +91,17 @@ public class ArquivoGeral<T> {
 		return colecao;
 	}
 
-	public String removeObjeto(int indice) throws ClassNotFoundException, IOException {
-		ArrayList<T> colecao = new ArrayList<>();
-		colecao = retornaColecao();
+	public String remover(int indice) throws ClassNotFoundException, IOException {
+		ArrayList<T> colecao = retornaColecao();
 		colecao.remove(indice);
 		gravaColecao(colecao);
 		return "Removido com sucesso !!!";
 	}
 
-	public String alteraObjeto(T objetoOriginal, T objetoAlterado) throws ClassNotFoundException, IOException {
+	public String alteraObjeto(int index, T objetoAlterado) throws ClassNotFoundException, IOException {
 		ArrayList<T> colecao = new ArrayList<>();
 		colecao = retornaColecao();
-		colecao.set(colecao.indexOf(objetoOriginal), objetoAlterado);
+		colecao.set(index, objetoAlterado);
 		gravaColecao(colecao);
 		return "Alteração concluida !!!";
 	}

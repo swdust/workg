@@ -88,9 +88,7 @@ public class MenuCliente extends JFrame {
 				if (resposta == JOptionPane.YES_OPTION) {
 					ArquivoGeral arq = new ArquivoGeral(new Cliente());
 					try {
-						
-						ArrayList<Exercicio> colecao = arq.retornaColecao();
-						colecao.remove(UsuarioUtil.retornaIndexCliente(TelaLogin.c1.getLogin()));
+						arq.remover(UsuarioUtil.retornaIndexCliente(TelaLogin.c1.getLogin()));
 						Main.getFrame().setVisible(true);
 						dispose();
 						
@@ -99,8 +97,6 @@ public class MenuCliente extends JFrame {
 					} catch (IOException e1) {
 						e1.printStackTrace();
 					}
-				} else if (resposta == JOptionPane.NO_OPTION) {
-					
 				}
 			}
 		});

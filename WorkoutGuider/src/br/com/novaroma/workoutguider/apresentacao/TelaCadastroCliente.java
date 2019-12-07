@@ -1,25 +1,24 @@
 package br.com.novaroma.workoutguider.apresentacao;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
-import java.awt.Color;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import javax.swing.JTextField;
-import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 import javax.swing.JCheckBox;
-import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
-import java.awt.Choice;
-import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class TelaCadastroCliente extends JPanel {
 	private JTextField Nome;
@@ -121,16 +120,30 @@ public class TelaCadastroCliente extends JPanel {
 		add(lblEmail);
 
 		Email = new JTextField();
+		Email.setText("xxxxx@xxx.com");
+		Email.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				Email.setText("");
+			}
+		});
 		Email.setBounds(95, 512, 190, 28);
 		add(Email);
 		Email.setColumns(10);
 
 		JLabel lblCpf = new JLabel("CPF:");
-		lblCpf.setBounds(95, 579, 55, 16);
+		lblCpf.setBounds(95, 576, 190, 16);
 		lblCpf.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblCpf);
 
 		CPF = new JTextField();
+		CPF.setText("xxx.xxx.xxx-xx");
+		CPF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				CPF.setText("");
+			}
+		});
 		CPF.setBounds(95, 595, 190, 28);
 		add(CPF);
 		CPF.setColumns(10);
@@ -141,6 +154,7 @@ public class TelaCadastroCliente extends JPanel {
 		add(lblTempoDisponvel);
 
 		Tempo = new JTextField();
+		Tempo.setToolTipText("xxx.xxx.xxx-xx");
 		Tempo.setBounds(575, 426, 190, 28);
 		add(Tempo);
 		Tempo.setColumns(10);
@@ -156,11 +170,18 @@ public class TelaCadastroCliente extends JPanel {
 		Idade.setColumns(10);
 
 		JLabel lblPeso = new JLabel("Peso:");
-		lblPeso.setBounds(575, 493, 55, 16);
+		lblPeso.setBounds(575, 481, 90, 28);
 		lblPeso.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblPeso);
 
 		Peso = new JTextField();
+		Peso.setText("Quilos");
+		Peso.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				Peso.setText("");
+			}
+		});
 		Peso.setBounds(575, 512, 190, 28);
 		add(Peso);
 		Peso.setColumns(10);
@@ -171,6 +192,13 @@ public class TelaCadastroCliente extends JPanel {
 		add(lblAltura);
 
 		Altura = new JTextField();
+		Altura.setText("Centímetros");
+		Altura.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				Altura.setText("");
+			}
+		});
 		Altura.setBounds(575, 595, 190, 28);
 		add(Altura);
 		Altura.setColumns(10);
@@ -181,6 +209,13 @@ public class TelaCadastroCliente extends JPanel {
 		add(lblTelefone);
 
 		Telefone = new JTextField();
+		Telefone.setText("XXXXXXXXX");
+		Telefone.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				Telefone.setText("");
+			}
+		});
 		Telefone.setBounds(575, 344, 190, 28);
 		add(Telefone);
 		Telefone.setColumns(10);

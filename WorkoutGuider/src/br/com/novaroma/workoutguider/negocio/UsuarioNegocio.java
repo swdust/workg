@@ -75,7 +75,7 @@ public class UsuarioNegocio {
 	}
 
 	public boolean telefone(String telefone) {
-		Pattern p = Pattern.compile("[0-9]{2}[9]{1}[0-9]{8}");
+		Pattern p = Pattern.compile("[9]{1}[0-9]{8}");
 		Matcher m = p.matcher(telefone);
 		return m.matches();
 	}
