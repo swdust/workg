@@ -68,7 +68,11 @@ public class CadastroUsuario {
 								if (verifique.altura(altura)) {
 									if (verifique.peso(peso)) {
 										if (verifique.telefone(telefone)) {
-											return cadastrando();
+											if(verifique.tempo(tempoDisponivel)){
+												return cadastrando();
+											}else {
+												return "Necessário ao menos 30 minutos !!!";
+											}
 										} else {
 											return "Número telefonico inválido, digite novamente !!!";
 										}

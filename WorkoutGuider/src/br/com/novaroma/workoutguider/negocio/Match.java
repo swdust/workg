@@ -3,24 +3,36 @@ package br.com.novaroma.workoutguider.negocio;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
-import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Exercicio;
 
 public class Match {
 
 	// ler arquivo já existente
 	File arquivoExercicio = new File("treino.txt");
-	ArquivoGeral dados = new ArquivoGeral(new Exercicio());
-	Cliente cliente = new Cliente();
-	ArrayList<Exercicio> exercicio = new ArrayList<Exercicio>();
-	ArrayList<Cliente> colecaoCliente = new ArrayList<Cliente>();
-
-	// arraylist final
-	ArrayList<Exercicio> treino = new ArrayList<Exercicio>();
-
+	
+	
+	public void match() throws ClassNotFoundException, IOException {
+		ArquivoGeral dados = new ArquivoGeral(new Exercicio());
+		ArrayList<Exercicio> colecao = dados.retornaColecao();
+		ArrayList<Exercicio> treino = new ArrayList<Exercicio>();
+		Collections.shuffle(colecao);
+		int contador = 0;
+		while(contador < quantidadeEx()) {
+			for (Exercicio ex : colecao) {
+				if(dificuldade(ex)) {
+					if(cIndicacao(ex)) {
+						treino.add(ex);
+						contador++;
+					}
+				}
+			}
+		}
+	}
+	
 	public boolean dificuldade(Exercicio ex) {
 		int dificuldade = 0;
 
@@ -42,4 +54,29 @@ public class Match {
 
 	}
 
+	public boolean cIndicacao(Exercicio ex) {
+		if(ex.getContraIndicacao()[0] == TelaLogin.c1.getDoencas()[0]) {
+			return false;
+		}else if(ex.getContraIndicacao()[1] == TelaLogin.c1.getDoencas()[1]) {
+			return false;
+		}else if(ex.getContraIndicacao()[2] == TelaLogin.c1.getDoencas()[2]) {
+			return false;
+		}else if(ex.getContraIndicacao()[3] == TelaLogin.c1.getDoencas()[3]) {
+			return false;
+		}
+		return true;
+	}
+	
+	public int quantidadeEx() {
+		
+		if((TelaLogin.c1.getTempoDisponivel() > 30) && (TelaLogin.c1.getTempoDisponivel() < 40)) {
+			return 3;
+		}else if((TelaLogin.c1.getTempoDisponivel() > 40) && (TelaLogin.c1.getTempoDisponivel() < 50)) {
+			return 4;
+		}else if((TelaLogin.c1.getTempoDisponivel() > 50)) {
+			return 5;
+		}
+		return 3;
+		
+	}
 }

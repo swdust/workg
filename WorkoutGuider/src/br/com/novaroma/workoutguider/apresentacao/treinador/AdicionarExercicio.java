@@ -18,11 +18,13 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JSpinner;
+import java.awt.Rectangle;
 
 public class AdicionarExercicio extends JPanel {
 	private JTextField NomeExercicio;
 
 	public AdicionarExercicio() {
+		setBounds(new Rectangle(0, 0, 1264, 660));
 		setLayout(null);
 
 		JLabel lblNome = new JLabel("Nome do Exerc\u00EDcio:");
