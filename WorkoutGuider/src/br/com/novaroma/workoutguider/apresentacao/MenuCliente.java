@@ -27,6 +27,7 @@ public class MenuCliente extends JFrame {
 
 	private JPanel contentPane;
 	JLayeredPane layeredPane;
+
 	/**
 	 * Launch the application.
 	 */
@@ -46,7 +47,7 @@ public class MenuCliente extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	
+
 	public MenuCliente() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,13 +61,13 @@ public class MenuCliente extends JFrame {
 		layeredPane.setBounds(0, 0, 1274, 670);
 		getContentPane().add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
+
 		JMenu mnDados = new JMenu("Cliente");
 		menuBar.add(mnDados);
-		
+
 		JMenuItem mntmAtualizarCadastro = new JMenuItem("Atualizar cadastro");
 		mntmAtualizarCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -79,11 +80,12 @@ public class MenuCliente extends JFrame {
 			}
 		});
 		mnDados.add(mntmAtualizarCadastro);
-		
+
 		JMenuItem mntmExcluirConta = new JMenuItem("Excluir conta");
 		mntmExcluirConta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?", "Confirmação", JOptionPane.YES_NO_OPTION);
+				int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?", "Confirmação",
+						JOptionPane.YES_NO_OPTION);
 
 				if (resposta == JOptionPane.YES_OPTION) {
 					ArquivoGeral arq = new ArquivoGeral(new Cliente());
@@ -91,7 +93,7 @@ public class MenuCliente extends JFrame {
 						arq.remover(UsuarioUtil.retornaIndexCliente(TelaLogin.c1.getLogin()));
 						Main.getFrame().setVisible(true);
 						dispose();
-						
+
 					} catch (ClassNotFoundException e1) {
 						e1.printStackTrace();
 					} catch (IOException e1) {
@@ -101,10 +103,10 @@ public class MenuCliente extends JFrame {
 			}
 		});
 		mnDados.add(mntmExcluirConta);
-		
+
 		JSeparator separator = new JSeparator();
 		mnDados.add(separator);
-		
+
 		JMenuItem mntmVoltar = new JMenuItem("Voltar");
 		mntmVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -113,10 +115,10 @@ public class MenuCliente extends JFrame {
 			}
 		});
 		mnDados.add(mntmVoltar);
-		
+
 		JMenu mnTreino = new JMenu("Treino");
 		menuBar.add(mnTreino);
-		
+
 		JMenuItem mntmVisualizarTreino = new JMenuItem("Visualizar Treino");
 		mntmVisualizarTreino.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -129,7 +131,7 @@ public class MenuCliente extends JFrame {
 			}
 		});
 		mnTreino.add(mntmVisualizarTreino);
-		
+
 		JMenuItem mntmAtualizarProgresso = new JMenuItem("Atualizar progresso");
 		mnTreino.add(mntmAtualizarProgresso);
 	}

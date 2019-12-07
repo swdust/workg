@@ -9,11 +9,11 @@ import br.com.novaroma.workoutguider.entidades.Exercicio;
 public class Index {
 
 	public static Exercicio retornaEx(int index) throws ClassNotFoundException, IOException {
-		
+
 		ArquivoGeral arq = new ArquivoGeral(new Exercicio());
 		ArrayList<Exercicio> colecao = arq.retornaColecao();
-		for(Exercicio ex : colecao) {
-			if(ex.getNome().equals(index)) {
+		for (Exercicio ex : colecao) {
+			if (ex.getNome().equals(index)) {
 				return ex;
 			}
 		}

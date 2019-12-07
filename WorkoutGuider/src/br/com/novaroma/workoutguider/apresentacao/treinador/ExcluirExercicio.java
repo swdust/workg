@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 
 public class ExcluirExercicio extends JPanel {
-	
+
 	/**
 	 * Create the panel.
 	 * 
@@ -56,12 +56,12 @@ public class ExcluirExercicio extends JPanel {
 		});
 		btnExcluir.setBounds(536, 258, 85, 21);
 		add(btnExcluir);
-		
+
 		JLabel lblSelecioneOExerccio = new JLabel("Selecione o exerc\u00EDcio:");
 		lblSelecioneOExerccio.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblSelecioneOExerccio.setBounds(294, 187, 199, 29);
 		add(lblSelecioneOExerccio);
 
 	}
-	
+
 }

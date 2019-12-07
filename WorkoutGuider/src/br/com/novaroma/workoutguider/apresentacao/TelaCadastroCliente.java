@@ -280,7 +280,8 @@ public class TelaCadastroCliente extends JPanel {
 
 				CadastroUsuario cad1 = new CadastroUsuario(Nome.getText(), Login.getText(), senha, confirmeSenha,
 						Idade.getText(), Endereco.getText(), Email.getText(), Telefone.getText(), CPF.getText(),
-						Double.parseDouble(Altura.getText()), Double.parseDouble(Peso.getText()), Integer.parseInt(Tempo.getText()), doencas);
+						Double.parseDouble(Altura.getText()), Double.parseDouble(Peso.getText()),
+						Integer.parseInt(Tempo.getText()), doencas);
 				JOptionPane.showMessageDialog(null, cad1.verificaCadastro());
 			}
 		});

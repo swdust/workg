@@ -103,23 +103,25 @@ public class MenuTreinador extends JFrame {
 		JMenuItem mntmExcluirConta = new JMenuItem("Excluir conta");
 		mntmExcluirConta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?", "Confirmação", JOptionPane.YES_NO_OPTION);
+				int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?", "Confirmação",
+						JOptionPane.YES_NO_OPTION);
 
-					if (resposta == JOptionPane.YES_OPTION) {
-						ArquivoGeral arq = new ArquivoGeral(TelaLogin.t1);
-						try {
-							JOptionPane.showMessageDialog(null, arq.remover(UsuarioUtil.retornaIndexTreinador(TelaLogin.t1.getLogin())));
-							Main.getFrame().setVisible(true);
-							dispose();
-						} catch (ClassNotFoundException e1) {
-							e1.printStackTrace();
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-					} else if (resposta == JOptionPane.NO_OPTION) {
-						
+				if (resposta == JOptionPane.YES_OPTION) {
+					ArquivoGeral arq = new ArquivoGeral(TelaLogin.t1);
+					try {
+						JOptionPane.showMessageDialog(null,
+								arq.remover(UsuarioUtil.retornaIndexTreinador(TelaLogin.t1.getLogin())));
+						Main.getFrame().setVisible(true);
+						dispose();
+					} catch (ClassNotFoundException e1) {
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
 					}
-					
+				} else if (resposta == JOptionPane.NO_OPTION) {
+
+				}
+
 			}
 		});
 		mnTreinador.add(mntmExcluirConta);
@@ -186,7 +188,7 @@ public class MenuTreinador extends JFrame {
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-				
+
 			}
 		});
 		mnExercicios.add(mntmListar);

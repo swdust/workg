@@ -12,5 +12,4 @@ public class Treinador extends Usuario {
 		super(nome, login, senha, idade, endereco, email, telefone, cpf);
 	}
 
-	
 }

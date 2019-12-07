@@ -90,7 +90,7 @@ public class CadastroUsuario {
 				} else {
 					return "Senha não confirmada, digite novamente !!!" + senha + " " + confirmeSenha;
 				}
-			}else {
+			} else {
 				return "Login indisponível, tente outro !!!";
 			}
 		} catch (FileNotFoundException e) {

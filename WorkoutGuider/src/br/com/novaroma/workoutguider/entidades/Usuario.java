@@ -97,5 +97,4 @@ public class Usuario implements Serializable {
 				+ endereco + ", email=" + email + ", telefone=" + telefone + ", cpf=" + cpf + "]";
 	}
 
-	
 }

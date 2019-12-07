@@ -11,9 +11,9 @@ public class UsuarioUtil {
 
 	public static Treinador retornaTreinador(String login) throws ClassNotFoundException, IOException {
 		ArquivoGeral arq = new ArquivoGeral(new Treinador());
-		ArrayList<Treinador> colecao = arq.retornaColecao(); 
-		for(Treinador t1 : colecao) {
-			if(t1.getLogin().equals(login)) {
+		ArrayList<Treinador> colecao = arq.retornaColecao();
+		for (Treinador t1 : colecao) {
+			if (t1.getLogin().equals(login)) {
 				return t1;
 			}
 		}
@@ -22,31 +22,31 @@ public class UsuarioUtil {
 
 	public static Cliente retornaCliente(String login) throws ClassNotFoundException, IOException {
 		ArquivoGeral arq = new ArquivoGeral(new Cliente());
-		ArrayList<Cliente> colecao = arq.retornaColecao(); 
-		for(Cliente c1 : colecao) {
-			if(c1.getLogin().equals(login)) {
+		ArrayList<Cliente> colecao = arq.retornaColecao();
+		for (Cliente c1 : colecao) {
+			if (c1.getLogin().equals(login)) {
 				return c1;
 			}
 		}
 		return null;
 	}
-	
+
 	public static int retornaIndexTreinador(String login) throws ClassNotFoundException, IOException {
 		ArquivoGeral arq = new ArquivoGeral(new Treinador());
-		ArrayList<Treinador> colecao = arq.retornaColecao(); 
-		for(Treinador t1 : colecao) {
-			if(t1.getLogin().equals(login)) {
+		ArrayList<Treinador> colecao = arq.retornaColecao();
+		for (Treinador t1 : colecao) {
+			if (t1.getLogin().equals(login)) {
 				return colecao.indexOf(t1);
 			}
 		}
 		return -1;
 	}
-	
+
 	public static int retornaIndexCliente(String login) throws ClassNotFoundException, IOException {
 		ArquivoGeral arq = new ArquivoGeral(new Cliente());
-		ArrayList<Cliente> colecao = arq.retornaColecao(); 
-		for(Cliente c1 : colecao) {
-			if(c1.getLogin().equals(login)) {
+		ArrayList<Cliente> colecao = arq.retornaColecao();
+		for (Cliente c1 : colecao) {
+			if (c1.getLogin().equals(login)) {
 				return colecao.indexOf(c1);
 			}
 		}
