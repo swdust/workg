@@ -20,6 +20,7 @@ public class UsuarioUtil {
 		return null;
 	}
 
+//A
 	public static Cliente retornaCliente(String login) throws ClassNotFoundException, IOException {
 		ArquivoGeral arq = new ArquivoGeral(new Cliente());
 		ArrayList<Cliente> colecao = arq.retornaColecao();
