@@ -7,21 +7,22 @@ import java.util.Collections;
 
 import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
+import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Exercicio;
 
 public class Match {
-
-	// ler arquivo já existente
+	public Cliente cc1 = new Cliente();
 	File arquivoExercicio = new File("treino.txt");
 	
 	
-	public void match() throws ClassNotFoundException, IOException {
+	public Cliente match(Cliente c1) throws ClassNotFoundException, IOException {
+		cc1 = c1;
 		ArquivoGeral dados = new ArquivoGeral(new Exercicio());
 		ArrayList<Exercicio> colecao = dados.retornaColecao();
 		ArrayList<Exercicio> treino = new ArrayList<Exercicio>();
 		Collections.shuffle(colecao);
-		int contador = 0;
-		while(contador < quantidadeEx()) {
+		int contador = 0; int contador2 = 0;
+		do{
 			for (Exercicio ex : colecao) {
 				if(dificuldade(ex)) {
 					if(cIndicacao(ex)) {
@@ -29,24 +30,28 @@ public class Match {
 						contador++;
 					}
 				}
+				contador2++;
 			}
-		}
+		}while((contador2 < colecao.size())||(contador == quantidadeEx()));
+		c1.setTreino(treino);
+		System.out.println(treino);
+		return c1;
 	}
 	
 	public boolean dificuldade(Exercicio ex) {
 		int dificuldade = 0;
 
-		if (TelaLogin.c1.getImc() <= 18.5) {
+		if (cc1.getImc() <= 18.5) {
 			dificuldade = 1;
-		} else if ((TelaLogin.c1.getImc() > 18.5) && (TelaLogin.c1.getImc() <= 25)) {
+		} else if ((cc1.getImc() > 18.5) && (cc1.getImc() <= 25)) {
 			dificuldade = 3;
-		} else if ((TelaLogin.c1.getImc() > 25) && (TelaLogin.c1.getImc() <= 30)) {
+		} else if ((cc1.getImc() > 25) && (cc1.getImc() <= 30)) {
 			dificuldade = 2;
-		} else if (TelaLogin.c1.getImc() > 30) {
+		} else if (cc1.getImc() > 30) {
 			dificuldade = 1;
 		}
 
-		if (ex.getDificuldade() == dificuldade) {
+		if (ex.getDificuldade() <= dificuldade) {
 			return true;
 		}
 
@@ -55,13 +60,13 @@ public class Match {
 	}
 
 	public boolean cIndicacao(Exercicio ex) {
-		if(ex.getContraIndicacao()[0] == TelaLogin.c1.getDoencas()[0]) {
+		if((ex.getContraIndicacao()[0] == cc1.getDoencas()[0])&&(cc1.getDoencas()[0])) {
 			return false;
-		}else if(ex.getContraIndicacao()[1] == TelaLogin.c1.getDoencas()[1]) {
+		}else if((ex.getContraIndicacao()[1] == cc1.getDoencas()[1])&&(cc1.getDoencas()[1])) {
 			return false;
-		}else if(ex.getContraIndicacao()[2] == TelaLogin.c1.getDoencas()[2]) {
+		}else if((ex.getContraIndicacao()[2] == cc1.getDoencas()[2])&&(cc1.getDoencas()[2])) {
 			return false;
-		}else if(ex.getContraIndicacao()[3] == TelaLogin.c1.getDoencas()[3]) {
+		}else if((ex.getContraIndicacao()[3] == cc1.getDoencas()[3])&&(cc1.getDoencas()[3])) {
 			return false;
 		}
 		return true;
@@ -69,11 +74,11 @@ public class Match {
 	
 	public int quantidadeEx() {
 		
-		if((TelaLogin.c1.getTempoDisponivel() > 30) && (TelaLogin.c1.getTempoDisponivel() < 40)) {
+		if((cc1.getTempoDisponivel() > 30) && (cc1.getTempoDisponivel() < 40)) {
 			return 3;
-		}else if((TelaLogin.c1.getTempoDisponivel() > 40) && (TelaLogin.c1.getTempoDisponivel() < 50)) {
+		}else if((cc1.getTempoDisponivel() > 40) && (cc1.getTempoDisponivel() < 50)) {
 			return 4;
-		}else if((TelaLogin.c1.getTempoDisponivel() > 50)) {
+		}else if((cc1.getTempoDisponivel() > 50)) {
 			return 5;
 		}
 		return 3;

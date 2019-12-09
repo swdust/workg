@@ -1,6 +1,7 @@
 package br.com.novaroma.workoutguider.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Cliente extends Usuario implements Serializable {
 
@@ -10,7 +11,7 @@ public class Cliente extends Usuario implements Serializable {
 	private int tempoDisponivel;
 	private char sexo;
 	private boolean[] doencas;
-	private Exercicio[] treino;
+	private ArrayList<Exercicio> treino;
 	// private Treino treino;
 
 	public Cliente() {
@@ -27,11 +28,11 @@ public class Cliente extends Usuario implements Serializable {
 		this.sexo = sexo;
 	}
 
-	public Exercicio[] getTreino() {
+	public ArrayList<Exercicio> getTreino() {
 		return treino;
 	}
 
-	public void setTreino(Exercicio[] ex) {
+	public void setTreino(ArrayList<Exercicio> ex) {
 		this.treino = ex;
 	}
 

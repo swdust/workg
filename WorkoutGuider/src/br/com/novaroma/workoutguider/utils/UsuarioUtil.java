@@ -51,6 +51,6 @@ public class UsuarioUtil {
 				return colecao.indexOf(c1);
 			}
 		}
-		return -1;
+		return -10000;
 	}
 }

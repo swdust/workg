@@ -147,9 +147,9 @@ public class UsuarioNegocio {
 
 	public boolean tempo(int tempo) {
 		if (tempo < 30) {
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	public boolean idade(String idade) {

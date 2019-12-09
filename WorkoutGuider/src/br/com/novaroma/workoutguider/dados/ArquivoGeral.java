@@ -101,7 +101,7 @@ public class ArquivoGeral<T> {
 	public String alteraObjeto(int index, T objetoAlterado) throws ClassNotFoundException, IOException {
 		ArrayList<T> colecao = new ArrayList<>();
 		colecao = retornaColecao();
-		colecao.set(index, objetoAlterado);
+		colecao.set(index , objetoAlterado);
 		gravaColecao(colecao);
 		return "Alteração concluida !!!";
 	}

@@ -205,36 +205,40 @@ public class AlterarCadastroCliente extends JPanel {
 		add(lblDoenas);
 
 		JCheckBox Asma = new JCheckBox("Asma");
-		Asma.setFont(new Font("Verdana", Font.PLAIN, 12));
-		Asma.setBounds(1050, 349, 105, 18);
-		add(Asma);
 		if (TelaLogin.c1.getDoencas()[0] == true) {
 			Asma.setSelected(true);
 		}
+		Asma.setFont(new Font("Verdana", Font.PLAIN, 12));
+		Asma.setBounds(1050, 349, 105, 18);
+		add(Asma);
+		
 
 		JCheckBox Cardiopatia = new JCheckBox("Cardiopatia");
-		Cardiopatia.setFont(new Font("Verdana", Font.PLAIN, 12));
-		Cardiopatia.setBounds(1050, 379, 105, 18);
-		add(Cardiopatia);
 		if (TelaLogin.c1.getDoencas()[1] == true) {
 			Cardiopatia.setSelected(true);
 		}
+		Cardiopatia.setFont(new Font("Verdana", Font.PLAIN, 12));
+		Cardiopatia.setBounds(1050, 379, 105, 18);
+		add(Cardiopatia);
+		
 
 		JCheckBox Diabetes = new JCheckBox("Diabetes");
-		Diabetes.setFont(new Font("Verdana", Font.PLAIN, 12));
-		Diabetes.setBounds(1050, 409, 105, 18);
-		add(Diabetes);
 		if (TelaLogin.c1.getDoencas()[2] == true) {
 			Diabetes.setSelected(true);
 		}
+		Diabetes.setFont(new Font("Verdana", Font.PLAIN, 12));
+		Diabetes.setBounds(1050, 409, 105, 18);
+		add(Diabetes);
+		
 
 		JCheckBox Osteoporose = new JCheckBox("Osteoporose");
-		Osteoporose.setFont(new Font("Verdana", Font.PLAIN, 12));
-		Osteoporose.setBounds(1050, 439, 105, 18);
-		add(Osteoporose);
 		if (TelaLogin.c1.getDoencas()[3] == true) {
 			Osteoporose.setSelected(true);
 		}
+		Osteoporose.setFont(new Font("Verdana", Font.PLAIN, 12));
+		Osteoporose.setBounds(1050, 439, 105, 18);
+		add(Osteoporose);
+		
 
 		JButton btnCadastrar = new JButton("Alterar");
 		btnCadastrar.setFont(new Font("Verdana", Font.PLAIN, 13));
@@ -273,7 +277,7 @@ public class AlterarCadastroCliente extends JPanel {
 						Idade.getText(), Endereco.getText(), Email.getText(), Telefone.getText(), CPF.getText(),
 						Double.parseDouble(Altura.getText()), Double.parseDouble(Peso.getText()),
 						Integer.parseInt(Tempo.getText()), doencas);
-				JOptionPane.showMessageDialog(null, cad1.verificaCadastro());
+				JOptionPane.showMessageDialog(null, cad1.verificaAltCadastro());
 			}
 		});
 

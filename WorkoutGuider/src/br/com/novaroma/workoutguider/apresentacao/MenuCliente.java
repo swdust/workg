@@ -122,12 +122,20 @@ public class MenuCliente extends JFrame {
 		JMenuItem mntmVisualizarTreino = new JMenuItem("Visualizar Treino");
 		mntmVisualizarTreino.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VisualizarTreino visuTreino = new VisualizarTreino();
-				visuTreino.setBounds(0, 0, 1274, 670);
-				layeredPane.removeAll();
-				layeredPane.add(visuTreino);
-				layeredPane.repaint();
-				layeredPane.revalidate();
+				VisualizarTreino visuTreino;
+				try {
+					visuTreino = new VisualizarTreino();
+					visuTreino.setBounds(0, 0, 1274, 670);
+					layeredPane.removeAll();
+					layeredPane.add(visuTreino);
+					layeredPane.repaint();
+					layeredPane.revalidate();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
 			}
 		});
 		mnTreino.add(mntmVisualizarTreino);

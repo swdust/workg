@@ -2,13 +2,12 @@ package br.com.novaroma.workoutguider.negocio;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import br.com.novaroma.workoutguider.negocio.UsuarioNegocio;
-import javax.swing.JOptionPane;
 
 import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Treinador;
+import br.com.novaroma.workoutguider.utils.UsuarioUtil;
 
 public class CadastroUsuario {
 	private String nome;
@@ -57,10 +56,62 @@ public class CadastroUsuario {
 		this.cpf = cpf;
 	}
 
-	public String verificaCadastro() {
+	public String verificaAltCadastro() {
 		UsuarioNegocio verifique = new UsuarioNegocio();
 		try {
 			if (!verifique.existeLogin(login) || login.equals(TelaLogin.c1.getLogin())) {
+				if (verifique.senha(senha, confirmeSenha)) {
+					if (verifique.CPF(cpf)) {
+						if (verifique.email(email)) {
+							if (verifique.idade(idade)) {
+								if (verifique.altura(altura)) {
+									if (verifique.peso(peso)) {
+										if (verifique.telefone(telefone)) {
+											if(verifique.tempo(tempoDisponivel)){
+												return alterando();
+											}else {
+												return "Necessário ao menos 30 minutos !!!";
+											}
+										} else {
+											return "Número telefonico inválido, digite novamente !!!";
+										}
+									} else {
+										return "Peso inválido, digite novamente !!!";
+									}
+								} else {
+									return "Altura inválida, voçê deve ter entre 80cm a 200cm !!!";
+								}
+							} else {
+								return "A idade mínima permitida é 15 anos e a máxima 90 !!!";
+							}
+						} else {
+							return "Email inválido, digite novamente !!!";
+						}
+					} else {
+						return "CPF inválido, digite novamente !!!";
+					}
+				} else {
+					return "Senha não confirmada, digite novamente !!!" + senha + " " + confirmeSenha;
+				}
+			} else {
+				return "Login indisponível, tente outro !!!";
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return "Arquivo não encontrado !!!";
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return "Classe não encontrada !!!";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro de entrada/saida !!!";
+		}
+	}
+	
+	public String verificaCadastro() {
+		UsuarioNegocio verifique = new UsuarioNegocio();
+		try {
+			if (!verifique.existeLogin(login)) {
 				if (verifique.senha(senha, confirmeSenha)) {
 					if (verifique.CPF(cpf)) {
 						if (verifique.email(email)) {
@@ -151,8 +202,8 @@ public class CadastroUsuario {
 		}
 	}
 
-	public String cadastrando() {
-
+	public String cadastrando() throws ClassNotFoundException, IOException {
+		Match mt = new Match();
 		Cliente c1 = new Cliente();
 
 		c1.setNome(nome);
@@ -168,7 +219,8 @@ public class CadastroUsuario {
 		c1.setTempoDisponivel(tempoDisponivel);
 		c1.setTelefone(telefone);
 		c1.setDoencas(doencas);
-
+		c1 = mt.match(c1);
+		
 		ArquivoGeral arquivo = new ArquivoGeral(c1);
 		try {
 			return arquivo.gravarObjeto(c1);
@@ -181,6 +233,36 @@ public class CadastroUsuario {
 		}
 	}
 
+	public String alterando() throws ClassNotFoundException, IOException {
+		Match mt = new Match();
+		Cliente c1 = new Cliente();
+
+		c1.setNome(nome);
+		c1.setLogin(login);
+		c1.setSenha(senha);
+		c1.setIdade(Integer.parseInt(idade));
+		c1.setEndereco(endereco);
+		c1.setEmail(email);
+		c1.setTelefone(telefone);
+		c1.setCpf(cpf);
+		c1.setAltura(altura);
+		c1.setPeso(peso);
+		c1.setTempoDisponivel(tempoDisponivel);
+		c1.setTelefone(telefone);
+		c1.setDoencas(doencas);
+		c1 = mt.match(c1);
+		
+		ArquivoGeral arquivo = new ArquivoGeral(c1);
+		try {
+			return arquivo.alteraObjeto(UsuarioUtil.retornaIndexCliente(nome), c1);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return "Classe não encontrada !!!";
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Erro de entrada/saida !!!";
+		}
+	}
 	public String cadastrandoT() {
 
 		Treinador t1 = new Treinador();
@@ -206,12 +288,5 @@ public class CadastroUsuario {
 			return "Erro de entrada/saida !!!";
 		}
 	}
-
-	/*
-	 * public CadastroCliente() {
-	 * 
-	 * this.nome = nome; this.login = login; this.senha = senha; this.confirmeSenha
-	 * = confirmeSenha; this.endereco = endereco; this.email = email; this.telefone
-	 * = telefone; this.cpf = cpf; }
-	 */
+	
 }
