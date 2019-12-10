@@ -292,7 +292,7 @@ public class TelaCadastroCliente extends JPanel {
 			}
 		});
 
-		btnCadastrar.setBounds(608, 643, 115, 34);
+		btnCadastrar.setBounds(1050, 507, 115, 34);
 		add(btnCadastrar);
 
 		JButton btnVoltar = new JButton("Voltar");

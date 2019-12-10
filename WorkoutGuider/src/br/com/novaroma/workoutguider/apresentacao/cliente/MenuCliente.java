@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JMenu;
@@ -51,6 +52,9 @@ public class MenuCliente extends JFrame {
 	 */
 
 	public MenuCliente() throws ClassNotFoundException, IOException {
+		ImageIcon icon = new ImageIcon(new ImageIcon(Principal.class
+				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/IconePrograma.png")).getImage());
+		setIconImage(icon.getImage());
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1280, 720);

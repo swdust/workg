@@ -284,13 +284,12 @@ public class AlterarCadastroCliente extends JPanel {
 				try {
 					JOptionPane.showMessageDialog(null, cad1.verificaAltCadastro());
 				} catch (HeadlessException | ExcecaoArquivo e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		});
 
-		btnCadastrar.setBounds(608, 643, 115, 34);
+		btnCadastrar.setBounds(1050, 524, 115, 34);
 		add(btnCadastrar);
 
 		ButtonGroup grupoSexo = new ButtonGroup();

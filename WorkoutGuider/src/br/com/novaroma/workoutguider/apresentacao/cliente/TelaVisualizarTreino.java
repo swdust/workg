@@ -64,6 +64,7 @@ public class TelaVisualizarTreino extends JPanel {
 		scrollPane.setSize(827, 335);
 		
 		JTextPane txtpnTreinoMensal = new JTextPane();
+		txtpnTreinoMensal.setEditable(false);
 		txtpnTreinoMensal.setFont(new Font("Verdana", Font.PLAIN, 30));
 		txtpnTreinoMensal.setText("Seu Treino Di\u00E1rio");
 		txtpnTreinoMensal.setBounds(495, 122, 302, 53);

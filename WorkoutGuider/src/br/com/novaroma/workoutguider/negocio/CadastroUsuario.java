@@ -255,7 +255,7 @@ public class CadastroUsuario {
 
 		ArquivoGeral arquivo = new ArquivoGeral(c1);
 		try {
-			return arquivo.alteraObjeto(UsuarioUtil.retornaIndexCliente(nome), c1);
+			return arquivo.alteraObjeto(UsuarioUtil.retornaIndexCliente(login), c1);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			return "Classe não encontrada!";
