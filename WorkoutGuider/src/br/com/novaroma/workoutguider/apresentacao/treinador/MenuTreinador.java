@@ -29,6 +29,9 @@ public class MenuTreinador extends JFrame {
 	private JPanel contentPane;
 	JLayeredPane layeredPane;
 
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,6 +44,13 @@ public class MenuTreinador extends JFrame {
 			}
 		});
 	}
+
+	/**
+	 * Create the frame.
+	 * 
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 */
 
 	public void switchPanels(JPanel panel) {
 		layeredPane.removeAll();
@@ -83,7 +93,7 @@ public class MenuTreinador extends JFrame {
 					layeredPane.add(dadosT);
 					switchPanels(dadosT);
 				} catch (ParseException e) {
-
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -119,7 +129,7 @@ public class MenuTreinador extends JFrame {
 		JSeparator separator = new JSeparator();
 		mnTreinador.add(separator);
 
-		JMenuItem mntmVoltar = new JMenuItem("Sair");
+		JMenuItem mntmVoltar = new JMenuItem("Voltar");
 		mntmVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Principal.getFrame().setVisible(true);
@@ -150,6 +160,22 @@ public class MenuTreinador extends JFrame {
 		mnCliente.add(mntmVisualizar);
 
 		JMenuItem mntmRemover = new JMenuItem("Remover");
+		mntmRemover.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TelaExcluirClientes ex;
+				try {
+					ex = new TelaExcluirClientes();
+					ex.setBounds(0, 0, 1264, 660);
+					layeredPane.add(ex);
+					switchPanels(ex);
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		mnCliente.add(mntmRemover);
 
 		JMenu mnExercicios = new JMenu("Exercicios");
@@ -183,9 +209,6 @@ public class MenuTreinador extends JFrame {
 		});
 		mnExercicios.add(mntmListar);
 
-		JMenuItem mntmAlterar = new JMenuItem("Alterar");
-		mnExercicios.add(mntmAlterar);
-
 		JMenuItem mntmExcluir = new JMenuItem("Excluir");
 		mntmExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -202,6 +225,9 @@ public class MenuTreinador extends JFrame {
 				}
 			}
 		});
+		
+		JSeparator separator_1 = new JSeparator();
+		mnExercicios.add(separator_1);
 		mnExercicios.add(mntmExcluir);
 
 	}
