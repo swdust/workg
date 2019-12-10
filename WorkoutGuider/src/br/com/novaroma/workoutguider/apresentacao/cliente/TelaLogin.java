@@ -66,7 +66,7 @@ public class TelaLogin extends JPanel {
 
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setIcon(new ImageIcon(
-				TelaLogin.class.getResource("/br/com/novaroma/workoutguider/componentesvisuais/Capturar2.JPG")));
+				TelaLogin.class.getResource("/br/com/novaroma/workoutguider/componentesvisuais/LogoWG.JPG")));
 		lblLogo.setBounds(498, 159, 333, 96);
 		add(lblLogo);
 
@@ -82,13 +82,13 @@ public class TelaLogin extends JPanel {
 
 		JLabel lblUser = new JLabel("");
 		lblUser.setIcon(new ImageIcon(
-				TelaLogin.class.getResource("/br/com/novaroma/workoutguider/componentesvisuais/user.png")));
+				TelaLogin.class.getResource("/br/com/novaroma/workoutguider/componentesvisuais/IconeUsuario.png")));
 		lblUser.setBounds(537, 282, 38, 34);
 		add(lblUser);
 
 		JLabel lblKey = new JLabel("");
 		lblKey.setIcon(new ImageIcon(
-				TelaLogin.class.getResource("/br/com/novaroma/workoutguider/componentesvisuais/house-key.png")));
+				TelaLogin.class.getResource("/br/com/novaroma/workoutguider/componentesvisuais/IconeSenha.png")));
 		lblKey.setBounds(537, 323, 38, 39);
 		add(lblKey);
 
