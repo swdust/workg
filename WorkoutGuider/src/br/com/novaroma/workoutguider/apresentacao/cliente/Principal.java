@@ -1,11 +1,10 @@
 package br.com.novaroma.workoutguider.apresentacao.cliente;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
-import br.com.novaroma.workoutguider.dados.ArquivoGeral;
-import br.com.novaroma.workoutguider.entidades.Cliente;
 
 public class Principal {
 
@@ -13,10 +12,11 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		setIcon();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
 					Principal window = new Principal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -26,10 +26,6 @@ public class Principal {
 		});
 	}
 
-	private static void setIcon() {
-
-	}
-
 	public Principal() {
 
 		initialize();
@@ -37,7 +33,10 @@ public class Principal {
 	}
 
 	private void initialize() {
+		
 		frame = new JFrame();
+		//ImageIcon icon = new ImageIcon("C:\\Users\\uiu\\git\\workg\\WorkoutGuider\\src\\br\\com\\novaroma\\workoutguider\\componentesvisuais\\IconePrograma.png");
+		//frame.setIconImage(icon.getImage());
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("Workout Guider");
@@ -46,6 +45,7 @@ public class Principal {
 		TelaLogin telaLogin = new TelaLogin();
 		frame.setContentPane(telaLogin);
 		telaLogin.setLayout(null);
+		
 	}
 
 	public static JFrame getFrame() {
