@@ -209,7 +209,7 @@ public class TelaCadastroCliente extends JPanel {
 		add(lblTelefone);
 
 		Telefone = new JTextField();
-		Telefone.setText("XXXXXXXXX");
+		Telefone.setText("(xx) xxxxx-xxxx");
 		Telefone.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {

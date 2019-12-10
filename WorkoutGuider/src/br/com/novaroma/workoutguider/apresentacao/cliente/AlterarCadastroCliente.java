@@ -47,7 +47,7 @@ public class AlterarCadastroCliente extends JPanel {
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setBounds(34, 25, 215, 50);
 		lblLogo.setIcon(new ImageIcon(TelaCadastroCliente.class
-				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/workoutguider mini.JPG")));
+				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/LogoWGMini.JPG")));
 		add(lblLogo);
 
 		JLabel lblNome = new JLabel("Nome: ");
