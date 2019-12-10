@@ -154,7 +154,6 @@ public class TelaCadastroCliente extends JPanel {
 		add(lblTempoDisponvel);
 
 		Tempo = new JTextField();
-		Tempo.setToolTipText("xxx.xxx.xxx-xx");
 		Tempo.setBounds(575, 426, 190, 28);
 		add(Tempo);
 		Tempo.setColumns(10);
