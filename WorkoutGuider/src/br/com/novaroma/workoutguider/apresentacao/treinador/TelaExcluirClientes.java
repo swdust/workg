@@ -28,7 +28,7 @@ public class TelaExcluirClientes extends JPanel {
 		setLayout(null);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(485, 187, 188, 29);
+		comboBox.setBounds(602, 190, 188, 29);
 		add(comboBox);
 
 		ArquivoGeral arq = new ArquivoGeral(new Cliente());
@@ -54,12 +54,12 @@ public class TelaExcluirClientes extends JPanel {
 				}
 			}
 		});
-		btnExcluir.setBounds(536, 258, 85, 21);
+		btnExcluir.setBounds(655, 230, 85, 21);
 		add(btnExcluir);
 
 		JLabel lblSelecioneOExerccio = new JLabel("Selecione o cliente:");
 		lblSelecioneOExerccio.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblSelecioneOExerccio.setBounds(294, 187, 199, 29);
+		lblSelecioneOExerccio.setBounds(437, 187, 199, 29);
 		add(lblSelecioneOExerccio);
 
 	}
