@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 import br.com.novaroma.workoutguider.utils.CPF;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class AlterarCadastroCliente extends JPanel {
 
@@ -136,7 +138,14 @@ public class AlterarCadastroCliente extends JPanel {
 		add(lblCpf);
 
 		CPF = new JTextField();
-		CPF.setText("Informe seu cpf:");
+		CPF.setText("Informe seu cpf");
+		CPF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				CPF.setText("");
+			}
+		});
+		
 		CPF.setBounds(95, 595, 190, 28);
 		add(CPF);
 		CPF.setColumns(10);
