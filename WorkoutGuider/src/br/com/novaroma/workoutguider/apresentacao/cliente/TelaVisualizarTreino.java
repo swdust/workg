@@ -21,6 +21,7 @@ import javax.swing.JTable;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextPane;
 
 public class TelaVisualizarTreino extends JPanel {
 	private JTextField caixaDeVisualizacao;
@@ -61,14 +62,12 @@ public class TelaVisualizarTreino extends JPanel {
 		scrollPane.setLocation(231, 213);
 		add(scrollPane);
 		scrollPane.setSize(827, 335);
-
-		JButton btnAtualizarTreino = new JButton("Atualizar treino");
-		btnAtualizarTreino.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnAtualizarTreino.setBounds(395, 99, 364, 64);
-		add(btnAtualizarTreino);
+		
+		JTextPane txtpnTreinoMensal = new JTextPane();
+		txtpnTreinoMensal.setFont(new Font("Verdana", Font.PLAIN, 30));
+		txtpnTreinoMensal.setText("Seu Treino");
+		txtpnTreinoMensal.setBounds(561, 122, 170, 53);
+		add(txtpnTreinoMensal);
 		scrollPane.setVisible(true);
 
 	}

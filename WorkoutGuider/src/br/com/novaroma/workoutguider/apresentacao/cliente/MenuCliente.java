@@ -46,9 +46,11 @@ public class MenuCliente extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
 	 */
 
-	public MenuCliente() {
+	public MenuCliente() throws ClassNotFoundException, IOException {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1280, 720);
@@ -57,8 +59,10 @@ public class MenuCliente extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 
+		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(0, 0, 1274, 670);
+		layeredPane.add(new TelaVisualizarTreino());
 		getContentPane().add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
 
