@@ -28,6 +28,9 @@ public class MenuCliente extends JFrame {
 	private JPanel contentPane;
 	JLayeredPane layeredPane;
 
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,6 +43,10 @@ public class MenuCliente extends JFrame {
 			}
 		});
 	}
+
+	/**
+	 * Create the frame.
+	 */
 
 	public MenuCliente() {
 		setResizable(false);
@@ -100,7 +107,7 @@ public class MenuCliente extends JFrame {
 		JSeparator separator = new JSeparator();
 		mnDados.add(separator);
 
-		JMenuItem mntmVoltar = new JMenuItem("Sair");
+		JMenuItem mntmVoltar = new JMenuItem("Voltar");
 		mntmVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Principal.getFrame().setVisible(true);
@@ -128,12 +135,17 @@ public class MenuCliente extends JFrame {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-
+				
 			}
 		});
 		mnTreino.add(mntmVisualizarTreino);
 
-		JMenuItem mntmAtualizarProgresso = new JMenuItem("Atualizar progresso");
+		JMenuItem mntmAtualizarProgresso = new JMenuItem("Progresso");
+		mntmAtualizarProgresso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		mnTreino.add(mntmAtualizarProgresso);
 	}
 }
