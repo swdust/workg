@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Cliente;
 
-public class Main {
+public class Principal {
 
 	private static JFrame frame;
 
@@ -17,7 +17,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main window = new Main();
+					Principal window = new Principal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,14 +30,11 @@ public class Main {
 
 	}
 
-	public Main() {
+	public Principal() {
 
 		initialize();
 
 	}
-
-	// Main.getFrame().setContentPane(new TelaLogin());
-	// Main.getFrame().getContentPane().revalidate();
 
 	private void initialize() {
 		frame = new JFrame();

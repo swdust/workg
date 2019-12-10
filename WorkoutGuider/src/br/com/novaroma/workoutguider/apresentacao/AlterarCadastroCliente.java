@@ -34,9 +34,6 @@ public class AlterarCadastroCliente extends JPanel {
 	private JPasswordField senhaBox;
 	private JPasswordField confirmeSenhaBox;
 
-	/**
-	 * Create the panel.
-	 */
 	public AlterarCadastroCliente() {
 		setBackground(Color.WHITE);
 		setBounds(100, 100, 1280, 720);
@@ -53,7 +50,7 @@ public class AlterarCadastroCliente extends JPanel {
 				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/workoutguider mini.JPG")));
 		add(lblLogo);
 
-		JLabel lblNome = new JLabel("Nome:");
+		JLabel lblNome = new JLabel("Nome: ");
 		lblNome.setBounds(95, 149, 190, 22);
 		lblNome.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblNome);
@@ -64,7 +61,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Nome);
 		Nome.setColumns(10);
 
-		JLabel lblSexo = new JLabel("Sexo:");
+		JLabel lblSexo = new JLabel("Sexo: ");
 		lblSexo.setBounds(1050, 152, 188, 16);
 		lblSexo.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblSexo);
@@ -80,7 +77,7 @@ public class AlterarCadastroCliente extends JPanel {
 		Masculino.setFont(new Font("Verdana", Font.PLAIN, 14));
 		add(Masculino);
 
-		JLabel lblLogin = new JLabel("Login:");
+		JLabel lblLogin = new JLabel("Login: ");
 		lblLogin.setBounds(95, 238, 183, 22);
 		lblLogin.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblLogin);
@@ -91,7 +88,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Login);
 		Login.setColumns(10);
 
-		JLabel lblSenha = new JLabel("Senha:");
+		JLabel lblSenha = new JLabel("Senha: ");
 		lblSenha.setBounds(95, 324, 184, 18);
 		lblSenha.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblSenha);
@@ -101,7 +98,7 @@ public class AlterarCadastroCliente extends JPanel {
 		senhaBox.setBounds(95, 344, 185, 28);
 		add(senhaBox);
 
-		JLabel lblConfirmeASenha = new JLabel("Confirme sua senha:");
+		JLabel lblConfirmeASenha = new JLabel("Confirme sua senha: ");
 		lblConfirmeASenha.setBounds(95, 405, 190, 22);
 		lblConfirmeASenha.setFont(new Font("Verdana", Font.PLAIN, 17));
 		add(lblConfirmeASenha);
@@ -111,7 +108,7 @@ public class AlterarCadastroCliente extends JPanel {
 		confirmeSenhaBox.setBounds(95, 426, 183, 28);
 		add(confirmeSenhaBox);
 
-		JLabel lblEndereoResidencial = new JLabel("Endere\u00E7o:");
+		JLabel lblEndereoResidencial = new JLabel("Endere\u00E7o: ");
 		lblEndereoResidencial.setBounds(575, 149, 200, 22);
 		lblEndereoResidencial.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblEndereoResidencial);
@@ -122,7 +119,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Endereco);
 		Endereco.setColumns(10);
 
-		JLabel lblEmail = new JLabel("Email:");
+		JLabel lblEmail = new JLabel("Email: ");
 		lblEmail.setBounds(95, 493, 190, 16);
 		lblEmail.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblEmail);
@@ -133,13 +130,13 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Email);
 		Email.setColumns(10);
 
-		JLabel lblCpf = new JLabel("CPF:");
+		JLabel lblCpf = new JLabel("CPF: ");
 		lblCpf.setBounds(95, 579, 55, 16);
 		lblCpf.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblCpf);
 
 		CPF = new JTextField();
-		CPF.setText("Informe seu cpf");
+		CPF.setText("Informe seu cpf:");
 		CPF.setBounds(95, 595, 190, 28);
 		add(CPF);
 		CPF.setColumns(10);
@@ -155,7 +152,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Tempo);
 		Tempo.setColumns(10);
 
-		JLabel lblDataDeNascimento = new JLabel("Idade:");
+		JLabel lblDataDeNascimento = new JLabel("Idade: ");
 		lblDataDeNascimento.setBounds(575, 241, 190, 16);
 		lblDataDeNascimento.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblDataDeNascimento);
@@ -166,7 +163,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Idade);
 		Idade.setColumns(10);
 
-		JLabel lblPeso = new JLabel("Peso:");
+		JLabel lblPeso = new JLabel("Peso: ");
 		lblPeso.setBounds(575, 493, 55, 16);
 		lblPeso.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblPeso);
@@ -177,7 +174,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Peso);
 		Peso.setColumns(10);
 
-		JLabel lblAltura = new JLabel("Altura:");
+		JLabel lblAltura = new JLabel("Altura: ");
 		lblAltura.setBounds(575, 573, 183, 22);
 		lblAltura.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblAltura);
@@ -188,7 +185,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Altura);
 		Altura.setColumns(10);
 
-		JLabel lblTelefone = new JLabel("Telefone:");
+		JLabel lblTelefone = new JLabel("Telefone: ");
 		lblTelefone.setBounds(575, 325, 170, 16);
 		lblTelefone.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblTelefone);
@@ -199,7 +196,7 @@ public class AlterarCadastroCliente extends JPanel {
 		add(Telefone);
 		Telefone.setColumns(10);
 
-		JLabel lblDoenas = new JLabel("Doen\u00E7as:");
+		JLabel lblDoenas = new JLabel("Doen\u00E7as: ");
 		lblDoenas.setBounds(1050, 325, 105, 16);
 		lblDoenas.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblDoenas);
@@ -211,7 +208,6 @@ public class AlterarCadastroCliente extends JPanel {
 		Asma.setFont(new Font("Verdana", Font.PLAIN, 12));
 		Asma.setBounds(1050, 349, 105, 18);
 		add(Asma);
-		
 
 		JCheckBox Cardiopatia = new JCheckBox("Cardiopatia");
 		if (TelaLogin.c1.getDoencas()[1] == true) {
@@ -220,7 +216,6 @@ public class AlterarCadastroCliente extends JPanel {
 		Cardiopatia.setFont(new Font("Verdana", Font.PLAIN, 12));
 		Cardiopatia.setBounds(1050, 379, 105, 18);
 		add(Cardiopatia);
-		
 
 		JCheckBox Diabetes = new JCheckBox("Diabetes");
 		if (TelaLogin.c1.getDoencas()[2] == true) {
@@ -229,7 +224,6 @@ public class AlterarCadastroCliente extends JPanel {
 		Diabetes.setFont(new Font("Verdana", Font.PLAIN, 12));
 		Diabetes.setBounds(1050, 409, 105, 18);
 		add(Diabetes);
-		
 
 		JCheckBox Osteoporose = new JCheckBox("Osteoporose");
 		if (TelaLogin.c1.getDoencas()[3] == true) {
@@ -238,7 +232,6 @@ public class AlterarCadastroCliente extends JPanel {
 		Osteoporose.setFont(new Font("Verdana", Font.PLAIN, 12));
 		Osteoporose.setBounds(1050, 439, 105, 18);
 		add(Osteoporose);
-		
 
 		JButton btnCadastrar = new JButton("Alterar");
 		btnCadastrar.setFont(new Font("Verdana", Font.PLAIN, 13));

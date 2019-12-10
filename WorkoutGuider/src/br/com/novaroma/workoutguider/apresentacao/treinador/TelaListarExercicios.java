@@ -15,15 +15,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ListarExercicios extends JPanel {
+public class TelaListarExercicios extends JPanel {
 	private JTable table;
 
-	/**
-	 * Create the panel.
-	 * @throws IOException
-	 * @throws ClassNotFoundException
-	 */
-	public ListarExercicios() throws ClassNotFoundException, IOException {
+	public TelaListarExercicios() throws ClassNotFoundException, IOException {
 		setLayout(null);
 
 		ArquivoGeral arq = new ArquivoGeral(new Exercicio());

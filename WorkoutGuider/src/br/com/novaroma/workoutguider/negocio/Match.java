@@ -13,31 +13,31 @@ import br.com.novaroma.workoutguider.entidades.Exercicio;
 public class Match {
 	public Cliente cc1 = new Cliente();
 	File arquivoExercicio = new File("treino.txt");
-	
-	
+
 	public Cliente match(Cliente c1) throws ClassNotFoundException, IOException {
 		cc1 = c1;
 		ArquivoGeral dados = new ArquivoGeral(new Exercicio());
 		ArrayList<Exercicio> colecao = dados.retornaColecao();
 		ArrayList<Exercicio> treino = new ArrayList<Exercicio>();
 		Collections.shuffle(colecao);
-		int contador = 0; int contador2 = 0;
-		do{
+		int contador = 0;
+		int contador2 = 0;
+		do {
 			for (Exercicio ex : colecao) {
-				if(dificuldade(ex)) {
-					if(cIndicacao(ex)) {
+				if (dificuldade(ex)) {
+					if (cIndicacao(ex)) {
 						treino.add(ex);
 						contador++;
 					}
 				}
 				contador2++;
 			}
-		}while((contador2 < colecao.size())||(contador == quantidadeEx()));
+		} while ((contador2 < colecao.size()) || (contador == quantidadeEx()));
 		c1.setTreino(treino);
 		System.out.println(treino);
 		return c1;
 	}
-	
+
 	public boolean dificuldade(Exercicio ex) {
 		int dificuldade = 0;
 
@@ -60,28 +60,28 @@ public class Match {
 	}
 
 	public boolean cIndicacao(Exercicio ex) {
-		if((ex.getContraIndicacao()[0] == cc1.getDoencas()[0])&&(cc1.getDoencas()[0])) {
+		if ((ex.getContraIndicacao()[0] == cc1.getDoencas()[0]) && (cc1.getDoencas()[0])) {
 			return false;
-		}else if((ex.getContraIndicacao()[1] == cc1.getDoencas()[1])&&(cc1.getDoencas()[1])) {
+		} else if ((ex.getContraIndicacao()[1] == cc1.getDoencas()[1]) && (cc1.getDoencas()[1])) {
 			return false;
-		}else if((ex.getContraIndicacao()[2] == cc1.getDoencas()[2])&&(cc1.getDoencas()[2])) {
+		} else if ((ex.getContraIndicacao()[2] == cc1.getDoencas()[2]) && (cc1.getDoencas()[2])) {
 			return false;
-		}else if((ex.getContraIndicacao()[3] == cc1.getDoencas()[3])&&(cc1.getDoencas()[3])) {
+		} else if ((ex.getContraIndicacao()[3] == cc1.getDoencas()[3]) && (cc1.getDoencas()[3])) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	public int quantidadeEx() {
-		
-		if((cc1.getTempoDisponivel() > 30) && (cc1.getTempoDisponivel() < 40)) {
+
+		if ((cc1.getTempoDisponivel() > 30) && (cc1.getTempoDisponivel() < 40)) {
 			return 3;
-		}else if((cc1.getTempoDisponivel() > 40) && (cc1.getTempoDisponivel() < 50)) {
+		} else if ((cc1.getTempoDisponivel() > 40) && (cc1.getTempoDisponivel() < 50)) {
 			return 4;
-		}else if((cc1.getTempoDisponivel() > 50)) {
+		} else if ((cc1.getTempoDisponivel() > 50)) {
 			return 5;
 		}
 		return 3;
-		
+
 	}
 }

@@ -8,14 +8,11 @@ import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 
-public class RemoverTreinador extends JPanel {
+public class TelaRemoverTreinador extends JPanel {
 	private JTextField Login;
 	private JTextField Senha;
 
-	/**
-	 * Create the panel.
-	 */
-	public RemoverTreinador() {
+	public TelaRemoverTreinador() {
 		setLayout(null);
 
 		JLabel lblDeleoDeConta = new JLabel("Dele\u00E7\u00E3o de Conta!");

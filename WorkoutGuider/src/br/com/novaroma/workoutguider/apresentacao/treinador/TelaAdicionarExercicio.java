@@ -20,10 +20,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSpinner;
 import java.awt.Rectangle;
 
-public class AdicionarExercicio extends JPanel {
+public class TelaAdicionarExercicio extends JPanel {
 	private JTextField NomeExercicio;
 
-	public AdicionarExercicio() {
+	public TelaAdicionarExercicio() {
 		setBounds(new Rectangle(0, 0, 1264, 660));
 		setLayout(null);
 
@@ -154,7 +154,7 @@ public class AdicionarExercicio extends JPanel {
 
 			}
 		});
-		btnCadastrar.setBounds(638, 610, 89, 23);
+		btnCadastrar.setBounds(638, 610, 97, 30);
 		add(btnCadastrar);
 
 	}

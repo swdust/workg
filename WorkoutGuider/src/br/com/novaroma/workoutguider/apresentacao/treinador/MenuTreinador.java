@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.EmptyBorder;
 
-import br.com.novaroma.workoutguider.apresentacao.Main;
+import br.com.novaroma.workoutguider.apresentacao.Principal;
 import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Treinador;
@@ -29,9 +29,6 @@ public class MenuTreinador extends JFrame {
 	private JPanel contentPane;
 	JLayeredPane layeredPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,13 +41,6 @@ public class MenuTreinador extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 * 
-	 * @throws IOException
-	 * @throws ClassNotFoundException
-	 */
 
 	public void switchPanels(JPanel panel) {
 		layeredPane.removeAll();
@@ -74,7 +64,7 @@ public class MenuTreinador extends JFrame {
 		contentPane.add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
 
-		AdicionarExercicio adicionarEx = new AdicionarExercicio();
+		TelaAdicionarExercicio adicionarEx = new TelaAdicionarExercicio();
 		layeredPane.add(adicionarEx, "name_359344097499300");
 
 		JMenuBar menuBar = new JMenuBar();
@@ -93,7 +83,7 @@ public class MenuTreinador extends JFrame {
 					layeredPane.add(dadosT);
 					switchPanels(dadosT);
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 			}
@@ -111,7 +101,7 @@ public class MenuTreinador extends JFrame {
 					try {
 						JOptionPane.showMessageDialog(null,
 								arq.remover(UsuarioUtil.retornaIndexTreinador(TelaLogin.t1.getLogin())));
-						Main.getFrame().setVisible(true);
+						Principal.getFrame().setVisible(true);
 						dispose();
 					} catch (ClassNotFoundException e1) {
 						e1.printStackTrace();
@@ -132,7 +122,7 @@ public class MenuTreinador extends JFrame {
 		JMenuItem mntmVoltar = new JMenuItem("Voltar");
 		mntmVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Main.getFrame().setVisible(true);
+				Principal.getFrame().setVisible(true);
 				dispose();
 			}
 		});
@@ -144,9 +134,9 @@ public class MenuTreinador extends JFrame {
 		JMenuItem mntmVisualizar = new JMenuItem("Listar");
 		mntmVisualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ListarClientes listarCl;
+				TelaListarClientes listarCl;
 				try {
-					listarCl = new ListarClientes();
+					listarCl = new TelaListarClientes();
 					listarCl.setBounds(0, 0, 1264, 660);
 					layeredPane.add(listarCl);
 					switchPanels(listarCl);
@@ -177,9 +167,9 @@ public class MenuTreinador extends JFrame {
 		mntmListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				ListarExercicios listarEx;
+				TelaListarExercicios listarEx;
 				try {
-					listarEx = new ListarExercicios();
+					listarEx = new TelaListarExercicios();
 					listarEx.setBounds(0, 0, 1264, 660);
 					layeredPane.add(listarEx);
 					switchPanels(listarEx);
@@ -199,9 +189,9 @@ public class MenuTreinador extends JFrame {
 		JMenuItem mntmExcluir = new JMenuItem("Excluir");
 		mntmExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ExcluirExercicio excluirEx;
+				TelaExcluirExercicio excluirEx;
 				try {
-					excluirEx = new ExcluirExercicio();
+					excluirEx = new TelaExcluirExercicio();
 					excluirEx.setBounds(0, 0, 1264, 660);
 					layeredPane.add(excluirEx);
 					switchPanels(excluirEx);

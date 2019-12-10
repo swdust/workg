@@ -31,19 +31,19 @@ public class CadastroExercicio {
 						if (verifique.contraIndicacao(contraIndicacao)) {
 							return cadastrando();
 						} else {
-							return "Contra indicação inválida !!!";
+							return "Contra-indicação inválida!";
 						}
 					} else {
-						return "Dificuldade inválida !!!";
+						return "Dificuldade inválida!";
 					}
 				} else {
-					return "O número de séries precisa estar entre 1 e 5 !!!";
+					return "O número de séries precisa estar entre 1 e 5!";
 				}
 			} else {
-				return "O número de repetições precisa estar entre 2 e 100 !!!";
+				return "O número de repetições precisa estar entre 2 e 100!";
 			}
 		} else {
-			return "O exercício já existe !!!";
+			return "O exercício já existe!";
 		}
 	}
 

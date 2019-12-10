@@ -32,7 +32,6 @@ public class TelaDadosTreinador extends JPanel {
 	public TelaDadosTreinador() throws ParseException {
 		setLayout(null);
 
-		// arq.alteraObjeto(TelaLogin.t1, objetoAlterado);
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Verdana", Font.PLAIN, 18));
 		lblNome.setBounds(269, 140, 80, 31);

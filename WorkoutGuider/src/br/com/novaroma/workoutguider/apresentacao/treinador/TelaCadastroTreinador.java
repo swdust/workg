@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import br.com.novaroma.workoutguider.apresentacao.Main;
+import br.com.novaroma.workoutguider.apresentacao.Principal;
 import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 
@@ -117,8 +117,8 @@ public class TelaCadastroTreinador extends JPanel {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Main.getFrame().setContentPane(new TelaLogin());
-				Main.getFrame().getContentPane().revalidate();
+				Principal.getFrame().setContentPane(new TelaLogin());
+				Principal.getFrame().getContentPane().revalidate();
 			}
 		});
 		btnVoltar.setFont(new Font("Verdana", Font.PLAIN, 13));

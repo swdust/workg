@@ -58,8 +58,8 @@ public class TelaLogin extends JPanel {
 		CadastroUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				Main.getFrame().setContentPane(new TelaCadastroCliente());
-				Main.getFrame().getContentPane().revalidate();
+				Principal.getFrame().setContentPane(new TelaCadastroCliente());
+				Principal.getFrame().getContentPane().revalidate();
 			}
 		});
 		add(CadastroUsuario);
@@ -95,8 +95,8 @@ public class TelaLogin extends JPanel {
 		JButton CadastroTreinador = new JButton("Treinador");
 		CadastroTreinador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Main.getFrame().setContentPane(new TelaCadastroTreinador());
-				Main.getFrame().getContentPane().revalidate();
+				Principal.getFrame().setContentPane(new TelaCadastroTreinador());
+				Principal.getFrame().getContentPane().revalidate();
 			}
 		});
 		CadastroTreinador.setFont(new Font("Verdana", Font.PLAIN, 12));
@@ -135,9 +135,9 @@ public class TelaLogin extends JPanel {
 								c1 = UsuarioUtil.retornaCliente(loginBox.getText());
 								MenuCliente menu = new MenuCliente();
 								menu.setVisible(true);
-								Main.getFrame().setVisible(false);
+								Principal.getFrame().setVisible(false);
 							} else
-								JOptionPane.showMessageDialog(null, "Cliente não encontrado !!!");
+								JOptionPane.showMessageDialog(null, "Cliente não encontrado!");
 						} catch (HeadlessException e) {
 							e.printStackTrace();
 						} catch (FileNotFoundException e) {
@@ -148,7 +148,7 @@ public class TelaLogin extends JPanel {
 							e.printStackTrace();
 						}
 					} else {
-						JOptionPane.showMessageDialog(null, "Nenhum cliente criado, faça seu cadastro !!!");
+						JOptionPane.showMessageDialog(null, "Nenhum cliente criado, faça seu cadastro!");
 					}
 				} else if (rdbtnTreinador.isSelected()) {
 
@@ -158,9 +158,9 @@ public class TelaLogin extends JPanel {
 								t1 = UsuarioUtil.retornaTreinador(loginBox.getText());
 								MenuTreinador menu = new MenuTreinador();
 								menu.setVisible(true);
-								Main.getFrame().setVisible(false);
+								Principal.getFrame().setVisible(false);
 							} else {
-								JOptionPane.showMessageDialog(null, "Treinador não encontrado !!!");
+								JOptionPane.showMessageDialog(null, "Treinador não encontrado!");
 							}
 						} catch (HeadlessException e) {
 							e.printStackTrace();
@@ -174,7 +174,7 @@ public class TelaLogin extends JPanel {
 							e.printStackTrace();
 						}
 					} else {
-						JOptionPane.showMessageDialog(null, "Nenhum treinador cadastrado, faça seu cadastro !!!");
+						JOptionPane.showMessageDialog(null, "Nenhum treinador cadastrado, faça seu cadastro!");
 					}
 				}
 			}

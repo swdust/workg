@@ -67,47 +67,47 @@ public class CadastroUsuario {
 								if (verifique.altura(altura)) {
 									if (verifique.peso(peso)) {
 										if (verifique.telefone(telefone)) {
-											if(verifique.tempo(tempoDisponivel)){
+											if (verifique.tempo(tempoDisponivel)) {
 												return alterando();
-											}else {
-												return "Necessário ao menos 30 minutos !!!";
+											} else {
+												return "Necessário ao menos 30 minutos!";
 											}
 										} else {
-											return "Número telefonico inválido, digite novamente !!!";
+											return "Número telefonico inválido, digite novamente!";
 										}
 									} else {
-										return "Peso inválido, digite novamente !!!";
+										return "Peso inválido, digite novamente!";
 									}
 								} else {
-									return "Altura inválida, voçê deve ter entre 80cm a 200cm !!!";
+									return "Altura inválida, voçê deve ter entre 80cm a 200cm!";
 								}
 							} else {
-								return "A idade mínima permitida é 15 anos e a máxima 90 !!!";
+								return "A idade mínima permitida é 15 anos e a máxima 90!";
 							}
 						} else {
-							return "Email inválido, digite novamente !!!";
+							return "Email inválido, digite novamente!";
 						}
 					} else {
-						return "CPF inválido, digite novamente !!!";
+						return "CPF inválido, digite novamente!";
 					}
 				} else {
-					return "Senha não confirmada, digite novamente !!!" + senha + " " + confirmeSenha;
+					return "Senha não confirmada, digite novamente!" + senha + " " + confirmeSenha;
 				}
 			} else {
-				return "Login indisponível, tente outro !!!";
+				return "Login indisponível, tente outro!";
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return "Arquivo não encontrado !!!";
+			return "Arquivo não encontrado!";
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			return "Classe não encontrada !!!";
+			return "Classe não encontrada!";
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "Erro de entrada/saida !!!";
+			return "Erro de entrada/saída!";
 		}
 	}
-	
+
 	public String verificaCadastro() {
 		UsuarioNegocio verifique = new UsuarioNegocio();
 		try {
@@ -119,44 +119,44 @@ public class CadastroUsuario {
 								if (verifique.altura(altura)) {
 									if (verifique.peso(peso)) {
 										if (verifique.telefone(telefone)) {
-											if(verifique.tempo(tempoDisponivel)){
+											if (verifique.tempo(tempoDisponivel)) {
 												return cadastrando();
-											}else {
-												return "Necessário ao menos 30 minutos !!!";
+											} else {
+												return "Necessário ao menos 30 minutos!";
 											}
 										} else {
-											return "Número telefonico inválido, digite novamente !!!";
+											return "Número telefonico inválido, digite novamente!";
 										}
 									} else {
-										return "Peso inválido, digite novamente !!!";
+										return "Peso inválido, digite novamente!";
 									}
 								} else {
-									return "Altura inválida, voçê deve ter entre 80cm a 200cm !!!";
+									return "Altura inválida, voçê deve ter entre 80cm a 200cm!";
 								}
 							} else {
-								return "A idade mínima permitida é 15 anos e a máxima 90 !!!";
+								return "A idade mínima permitida é 15 anos e a máxima 90!";
 							}
 						} else {
-							return "Email inválido, digite novamente !!!";
+							return "Email inválido, digite novamente!";
 						}
 					} else {
-						return "CPF inválido, digite novamente !!!";
+						return "CPF inválido, digite novamente!";
 					}
 				} else {
-					return "Senha não confirmada, digite novamente !!!" + senha + " " + confirmeSenha;
+					return "Senha não confirmada, digite novamente!" + senha + " " + confirmeSenha;
 				}
 			} else {
-				return "Login indisponível, tente outro !!!";
+				return "Login indisponível, tente outro!";
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return "Arquivo não encontrado !!!";
+			return "Arquivo não encontrado!";
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			return "Classe não encontrada !!!";
+			return "Classe não encontrada!";
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "Erro de entrada/saida !!!";
+			return "Erro de entrada/saida!";
 		}
 	}
 
@@ -165,7 +165,7 @@ public class CadastroUsuario {
 
 		try {
 			if (verifique.existeLoginT(login)) {
-				return "Login indisponível, tente outro !!!";
+				return "Login indisponível, tente outro!";
 			} else {
 
 				if (verifique.senha(senha, confirmeSenha)) {
@@ -175,30 +175,30 @@ public class CadastroUsuario {
 								if (verifique.telefone(telefone)) {
 									return cadastrandoT();
 								} else {
-									return "Número telefonico inválido, digite novamente !!!";
+									return "Número telefonico inválido, digite novamente!";
 								}
 							} else {
-								return "A idade mínima permitida é 15 anos e a máxima 90 !!!";
+								return "A idade mínima permitida é 15 anos e a máxima 90!";
 							}
 						} else {
-							return "Email inválido, digite novamente !!!";
+							return "Email inválido, digite novamente!";
 						}
 					} else {
-						return "CPF inválido, digite novamente !!!";
+						return "CPF inválido, digite novamente!";
 					}
 				} else {
-					return "Senha não confirmada, digite novamente !!! (" + senha + "=/=" + confirmeSenha + ")";
+					return "Senha não confirmada, digite novamente! (" + senha + "=/=" + confirmeSenha + ")";
 				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return "Arquivo não encontrado !!!";
+			return "Arquivo não encontrado!";
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			return "Classe não encontrada !!!";
+			return "Classe não encontrada!";
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "Erro de entrada/saida !!!";
+			return "Erro de entrada/saída!";
 		}
 	}
 
@@ -220,7 +220,7 @@ public class CadastroUsuario {
 		c1.setTelefone(telefone);
 		c1.setDoencas(doencas);
 		c1 = mt.match(c1);
-		
+
 		ArquivoGeral arquivo = new ArquivoGeral(c1);
 		try {
 			return arquivo.gravarObjeto(c1);
@@ -251,18 +251,19 @@ public class CadastroUsuario {
 		c1.setTelefone(telefone);
 		c1.setDoencas(doencas);
 		c1 = mt.match(c1);
-		
+
 		ArquivoGeral arquivo = new ArquivoGeral(c1);
 		try {
 			return arquivo.alteraObjeto(UsuarioUtil.retornaIndexCliente(nome), c1);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			return "Classe não encontrada !!!";
+			return "Classe não encontrada!";
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "Erro de entrada/saida !!!";
+			return "Erro de entrada/saída!";
 		}
 	}
+
 	public String cadastrandoT() {
 
 		Treinador t1 = new Treinador();
@@ -282,11 +283,11 @@ public class CadastroUsuario {
 			return arquivo.gravarObjeto(t1);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			return "Classe não encontrada !!!";
+			return "Classe não encontrada!";
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "Erro de entrada/saida !!!";
+			return "Erro de entrada/saída!";
 		}
 	}
-	
+
 }

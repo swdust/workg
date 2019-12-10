@@ -16,19 +16,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class ExcluirExercicio extends JPanel {
+public class TelaExcluirExercicio extends JPanel {
 
-	/**
-	 * Create the panel.
-	 * 
-	 * @throws IOException
-	 * @throws ClassNotFoundException
-	 */
-	public ExcluirExercicio() throws ClassNotFoundException, IOException {
+	public TelaExcluirExercicio() throws ClassNotFoundException, IOException {
 		setLayout(null);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(485, 187, 188, 29);
+		comboBox.setBounds(581, 190, 188, 29);
 		add(comboBox);
 
 		ArquivoGeral arq = new ArquivoGeral(new Exercicio());
@@ -54,12 +48,12 @@ public class ExcluirExercicio extends JPanel {
 				}
 			}
 		});
-		btnExcluir.setBounds(536, 258, 85, 21);
+		btnExcluir.setBounds(628, 245, 85, 21);
 		add(btnExcluir);
 
 		JLabel lblSelecioneOExerccio = new JLabel("Selecione o exerc\u00EDcio:");
 		lblSelecioneOExerccio.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblSelecioneOExerccio.setBounds(294, 187, 199, 29);
+		lblSelecioneOExerccio.setBounds(392, 187, 199, 29);
 		add(lblSelecioneOExerccio);
 
 	}

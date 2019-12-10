@@ -12,7 +12,6 @@ public class Cliente extends Usuario implements Serializable {
 	private char sexo;
 	private boolean[] doencas;
 	private ArrayList<Exercicio> treino;
-	// private Treino treino;
 
 	public Cliente() {
 	}

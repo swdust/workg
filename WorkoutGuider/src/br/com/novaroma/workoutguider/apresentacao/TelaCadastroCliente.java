@@ -293,8 +293,8 @@ public class TelaCadastroCliente extends JPanel {
 		btnVoltar.setFont(new Font("Verdana", Font.PLAIN, 12));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Main.getFrame().setContentPane(new TelaLogin());
-				Main.getFrame().getContentPane().revalidate();
+				Principal.getFrame().setContentPane(new TelaLogin());
+				Principal.getFrame().getContentPane().revalidate();
 			}
 		});
 		btnVoltar.setBounds(1166, 47, 90, 28);

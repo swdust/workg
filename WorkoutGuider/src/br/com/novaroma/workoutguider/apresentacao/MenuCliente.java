@@ -28,9 +28,6 @@ public class MenuCliente extends JFrame {
 	private JPanel contentPane;
 	JLayeredPane layeredPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,10 +40,6 @@ public class MenuCliente extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
 
 	public MenuCliente() {
 		setResizable(false);
@@ -91,7 +84,7 @@ public class MenuCliente extends JFrame {
 					ArquivoGeral arq = new ArquivoGeral(new Cliente());
 					try {
 						arq.remover(UsuarioUtil.retornaIndexCliente(TelaLogin.c1.getLogin()));
-						Main.getFrame().setVisible(true);
+						Principal.getFrame().setVisible(true);
 						dispose();
 
 					} catch (ClassNotFoundException e1) {
@@ -110,7 +103,7 @@ public class MenuCliente extends JFrame {
 		JMenuItem mntmVoltar = new JMenuItem("Voltar");
 		mntmVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Main.getFrame().setVisible(true);
+				Principal.getFrame().setVisible(true);
 				dispose();
 			}
 		});
@@ -122,9 +115,9 @@ public class MenuCliente extends JFrame {
 		JMenuItem mntmVisualizarTreino = new JMenuItem("Visualizar Treino");
 		mntmVisualizarTreino.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VisualizarTreino visuTreino;
+				TelaVisualizarTreino visuTreino;
 				try {
-					visuTreino = new VisualizarTreino();
+					visuTreino = new TelaVisualizarTreino();
 					visuTreino.setBounds(0, 0, 1274, 670);
 					layeredPane.removeAll();
 					layeredPane.add(visuTreino);
@@ -135,7 +128,7 @@ public class MenuCliente extends JFrame {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				
+
 			}
 		});
 		mnTreino.add(mntmVisualizarTreino);
