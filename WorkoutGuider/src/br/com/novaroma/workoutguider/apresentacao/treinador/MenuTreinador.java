@@ -129,7 +129,7 @@ public class MenuTreinador extends JFrame {
 		JSeparator separator = new JSeparator();
 		mnTreinador.add(separator);
 
-		JMenuItem mntmVoltar = new JMenuItem("Voltar");
+		JMenuItem mntmVoltar = new JMenuItem("Sair");
 		mntmVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Principal.getFrame().setVisible(true);
