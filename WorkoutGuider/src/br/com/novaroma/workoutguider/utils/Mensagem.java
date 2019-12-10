@@ -2,7 +2,7 @@ package br.com.novaroma.workoutguider.utils;
 
 public enum Mensagem {
 	
-	ERRO_ARQUIVO("Erro de arquivo: não foi possível ");
+	ERRO_ARQUIVO("Erro de arquivo: não foi possível acessar o arquivo !!!");
 	
 	private String mensagem;
 	

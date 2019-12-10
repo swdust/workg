@@ -30,10 +30,7 @@ public class Match {
 				}
 			}
 		}
-		System.out.println(treino.size());
-		System.out.println(quantidadeEx());
 		c1.setTreino(treino);
-		System.out.println(treino);
 		return c1;
 	}
 
