@@ -77,12 +77,12 @@ public class TelaCadastroCliente extends JPanel {
 		add(Masculino);
 
 		JLabel lblLogin = new JLabel("Login:");
-		lblLogin.setBounds(95, 238, 183, 22);
+		lblLogin.setBounds(95, 238, 183, 34);
 		lblLogin.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblLogin);
 
 		Login = new JTextField();
-		Login.setBounds(95, 257, 185, 28);
+		Login.setBounds(95, 271, 185, 28);
 		add(Login);
 		Login.setColumns(10);
 
@@ -97,7 +97,7 @@ public class TelaCadastroCliente extends JPanel {
 
 		JLabel lblConfirmeASenha = new JLabel("Confirme sua senha:");
 		lblConfirmeASenha.setBounds(95, 405, 190, 22);
-		lblConfirmeASenha.setFont(new Font("Verdana", Font.PLAIN, 17));
+		lblConfirmeASenha.setFont(new Font("Verdana", Font.PLAIN, 16));
 		add(lblConfirmeASenha);
 
 		confirmeSenhaBox = new JPasswordField();
@@ -159,7 +159,7 @@ public class TelaCadastroCliente extends JPanel {
 		Tempo.setColumns(10);
 
 		JLabel lblDataDeNascimento = new JLabel("Idade:");
-		lblDataDeNascimento.setBounds(575, 241, 190, 16);
+		lblDataDeNascimento.setBounds(575, 238, 190, 16);
 		lblDataDeNascimento.setFont(new Font("Verdana", Font.PLAIN, 18));
 		add(lblDataDeNascimento);
 
