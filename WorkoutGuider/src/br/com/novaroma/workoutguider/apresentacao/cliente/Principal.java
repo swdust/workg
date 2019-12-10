@@ -2,10 +2,9 @@ package br.com.novaroma.workoutguider.apresentacao.cliente;
 
 import java.awt.EventQueue;
 
+import javax.print.DocFlavor.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
-import br.com.novaroma.workoutguider.dados.ArquivoGeral;
-import br.com.novaroma.workoutguider.entidades.Cliente;
 
 public class Principal {
 
@@ -13,7 +12,6 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		setIcon();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -24,10 +22,6 @@ public class Principal {
 				}
 			}
 		});
-	}
-
-	private static void setIcon() {
-
 	}
 
 	public Principal() {
