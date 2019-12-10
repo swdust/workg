@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Cliente;
@@ -21,18 +20,17 @@ public class Match {
 		ArrayList<Exercicio> treino = new ArrayList<Exercicio>();
 		Collections.shuffle(colecao);
 		int contador = 0;
-		int contador2 = 0;
-		do {
-			for (Exercicio ex : colecao) {
-				if (dificuldade(ex)) {
-					if (cIndicacao(ex)) {
+		for (Exercicio ex : colecao) {
+			if (dificuldade(ex)) {
+				if (cIndicacao(ex)) {
+					if (treino.size() < quantidadeEx()) {
 						treino.add(ex);
-						contador++;
 					}
 				}
-				contador2++;
 			}
-		} while ((contador2 < colecao.size()) || (contador == quantidadeEx()));
+		}
+		System.out.println(treino.size());
+		System.out.println(quantidadeEx());
 		c1.setTreino(treino);
 		System.out.println(treino);
 		return c1;
