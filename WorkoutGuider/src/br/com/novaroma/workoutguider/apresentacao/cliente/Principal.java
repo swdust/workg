@@ -35,8 +35,9 @@ public class Principal {
 	private void initialize() {
 		
 		frame = new JFrame();
-		//ImageIcon icon = new ImageIcon("C:\\Users\\uiu\\git\\workg\\WorkoutGuider\\src\\br\\com\\novaroma\\workoutguider\\componentesvisuais\\IconePrograma.png");
-		//frame.setIconImage(icon.getImage());
+		ImageIcon icon = new ImageIcon(new ImageIcon(Principal.class
+				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/IconePrograma.png")).getImage());
+		frame.setIconImage(icon.getImage());
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("Workout Guider");
