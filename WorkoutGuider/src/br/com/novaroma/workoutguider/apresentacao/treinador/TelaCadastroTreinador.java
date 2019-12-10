@@ -148,7 +148,7 @@ public class TelaCadastroTreinador extends JPanel {
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(TelaCadastroTreinador.class
-				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/workoutguider mini.JPG")));
+				.getResource("/br/com/novaroma/workoutguider/componentesvisuais/LogoWGMini.JPG")));
 		label.setBounds(18, 20, 240, 62);
 		add(label);
 
