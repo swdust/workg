@@ -1,4 +1,4 @@
-package br.com.novaroma.workoutguider.apresentacao;
+package br.com.novaroma.workoutguider.apresentacao.cliente;
 
 import java.awt.EventQueue;
 

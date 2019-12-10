@@ -3,7 +3,7 @@ package br.com.novaroma.workoutguider.negocio;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
+import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Treinador;

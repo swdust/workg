@@ -1,4 +1,4 @@
-package br.com.novaroma.workoutguider.apresentacao;
+package br.com.novaroma.workoutguider.apresentacao.cliente;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

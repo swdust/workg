@@ -7,8 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import br.com.novaroma.workoutguider.apresentacao.Principal;
-import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
+import br.com.novaroma.workoutguider.apresentacao.cliente.Principal;
+import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 
 import javax.swing.JButton;

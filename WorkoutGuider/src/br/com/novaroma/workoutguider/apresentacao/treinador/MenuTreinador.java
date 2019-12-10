@@ -17,8 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.EmptyBorder;
 
-import br.com.novaroma.workoutguider.apresentacao.Principal;
-import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
+import br.com.novaroma.workoutguider.apresentacao.cliente.Principal;
+import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Treinador;
 import br.com.novaroma.workoutguider.utils.UsuarioUtil;

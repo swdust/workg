@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import br.com.novaroma.workoutguider.utils.*;
-import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
+import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Treinador;
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;

@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import br.com.novaroma.workoutguider.apresentacao.TelaLogin;
+
+import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Exercicio;
