@@ -12,7 +12,7 @@ import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Treinador;
 import br.com.novaroma.workoutguider.entidades.Usuario;
 
-public class ArquivoGeral<T> {
+public class ArquivoGeral<T> implements IArquivoGeral<T> {
 	T objeto;
 	File arquivoCliente = new File("cliente.txt");
 	File arquivoTreinador = new File("treinador.txt");
