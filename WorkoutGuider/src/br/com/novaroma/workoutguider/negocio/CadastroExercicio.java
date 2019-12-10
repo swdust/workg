@@ -25,7 +25,7 @@ public class CadastroExercicio {
 	public String verificaCadastro() throws ClassNotFoundException, IOException, ExcecaoArquivo {
 		ExercicioNegocio verifique = new ExercicioNegocio();
 
-		if (!verifique.existeExercicio(nome)) {
+		if (verifique.existeExercicio(nome)) {
 			if (verifique.repeticao(repeticao)) {
 				if (verifique.serie(serie)) {
 					if (verifique.dificuldade(dificuldade)) {

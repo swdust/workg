@@ -12,19 +12,17 @@ public class ExercicioNegocio {
 	public boolean existeExercicio(String nome) throws ClassNotFoundException, IOException {
 		File arquivoExercicio = new File("exercicio.txt");
 		if (!arquivoExercicio.exists()) {
-			return false;
+			return true;
 		}
 		ArquivoGeral dados = new ArquivoGeral(new Exercicio());
 		ArrayList<Exercicio> colecao = new ArrayList<Exercicio>();
 		colecao = dados.retornaColecao();
 		for (Exercicio ex : colecao) {
 			if (ex.getNome().equals(nome)) {
-				return true;
-			} else if (ex.getNome() != nome) {
 				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public boolean repeticao(int rep) {
