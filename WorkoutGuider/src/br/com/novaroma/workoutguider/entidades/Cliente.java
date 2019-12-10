@@ -12,7 +12,7 @@ public class Cliente extends Usuario implements Serializable {
 	private char sexo;
 	private boolean[] doencas;
 	private ArrayList<Exercicio> treino;
-
+	private int diasTreinados;
 	public Cliente() {
 	}
 
@@ -25,6 +25,16 @@ public class Cliente extends Usuario implements Serializable {
 		this.doencas = doencas;
 		this.tempoDisponivel = tempoDisponivel;
 		this.sexo = sexo;
+	}
+
+	
+	
+	public int getDiasTreinados() {
+		return diasTreinados;
+	}
+
+	public void setDiasTreinados(int diasTreinados) {
+		this.diasTreinados = diasTreinados;
 	}
 
 	public ArrayList<Exercicio> getTreino() {
