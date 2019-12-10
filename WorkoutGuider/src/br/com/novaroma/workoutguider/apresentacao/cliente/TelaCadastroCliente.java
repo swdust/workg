@@ -2,6 +2,7 @@ package br.com.novaroma.workoutguider.apresentacao.cliente;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -281,7 +283,12 @@ public class TelaCadastroCliente extends JPanel {
 						Idade.getText(), Endereco.getText(), Email.getText(), Telefone.getText(), CPF.getText(),
 						Double.parseDouble(Altura.getText()), Double.parseDouble(Peso.getText()),
 						Integer.parseInt(Tempo.getText()), doencas);
-				JOptionPane.showMessageDialog(null, cad1.verificaCadastro());
+				try {
+					JOptionPane.showMessageDialog(null, cad1.verificaCadastro());
+				} catch (HeadlessException | ExcecaoArquivo e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 

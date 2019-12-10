@@ -5,8 +5,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.HeadlessException;
+
 import javax.swing.JTextField;
 
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
 import br.com.novaroma.workoutguider.negocio.CadastroExercicio;
 import br.com.novaroma.workoutguider.negocio.ExercicioNegocio;
 
@@ -149,6 +152,12 @@ public class TelaAdicionarExercicio extends JPanel {
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (HeadlessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExcecaoArquivo e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 

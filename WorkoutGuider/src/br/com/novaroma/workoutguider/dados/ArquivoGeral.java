@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Treinador;
 import br.com.novaroma.workoutguider.entidades.Usuario;
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
+import br.com.novaroma.workoutguider.utils.Mensagem;
 
 public class ArquivoGeral<T> implements IArquivoGeral<T> {
 	T objeto;
@@ -22,40 +24,47 @@ public class ArquivoGeral<T> implements IArquivoGeral<T> {
 		this.objeto = objeto;
 	}
 
-	public String gravarObjeto(T obj) throws ClassNotFoundException, IOException {
+	public String gravarObjeto(T obj) throws ClassNotFoundException, IOException, ExcecaoArquivo {
 
-		ArrayList<T> colecao = new ArrayList<>();
+		try {
+			
+			ArrayList<T> colecao = new ArrayList<>();
 
-		if (objeto.getClass().equals(Cliente.class)) {
+			if (objeto.getClass().equals(Cliente.class)) {
 
-			if (arquivoCliente.exists()) {
-				colecao = retornaColecao();
+				if (arquivoCliente.exists()) {
+					colecao = retornaColecao();
+				} else {
+					arquivoCliente.createNewFile();
+				}
+
+			} else if (objeto.getClass().equals(Treinador.class)) {
+
+				if (arquivoTreinador.exists()) {
+					colecao = retornaColecao();
+				} else {
+					arquivoTreinador.createNewFile();
+
+				}
+
 			} else {
-				arquivoCliente.createNewFile();
+
+				if (arquivoExercicio.exists()) {
+					colecao = retornaColecao();
+				} else {
+					arquivoExercicio.createNewFile();
+
+				}
+
 			}
 
-		} else if (objeto.getClass().equals(Treinador.class)) {
-
-			if (arquivoTreinador.exists()) {
-				colecao = retornaColecao();
-			} else {
-				arquivoTreinador.createNewFile();
-
-			}
-
-		} else {
-
-			if (arquivoExercicio.exists()) {
-				colecao = retornaColecao();
-			} else {
-				arquivoExercicio.createNewFile();
-
-			}
-
+			colecao.add(obj);
+			return gravaColecao(colecao);
+			
+		} catch (Exception e) {
+			throw new ExcecaoArquivo(Mensagem.ERRO_ARQUIVO.getMensagem());
 		}
-
-		colecao.add(obj);
-		return gravaColecao(colecao);
+		
 	}
 
 	public String gravaColecao(ArrayList<T> colecao) throws IOException {

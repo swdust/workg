@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Exercicio;
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
 
 public class CadastroExercicio {
 
@@ -21,7 +22,7 @@ public class CadastroExercicio {
 		this.contraIndicacao = contraIndicacao;
 	}
 
-	public String verificaCadastro() throws ClassNotFoundException, IOException {
+	public String verificaCadastro() throws ClassNotFoundException, IOException, ExcecaoArquivo {
 		ExercicioNegocio verifique = new ExercicioNegocio();
 
 		if (!verifique.existeExercicio(nome)) {
@@ -47,7 +48,7 @@ public class CadastroExercicio {
 		}
 	}
 
-	public String cadastrando() throws ClassNotFoundException, IOException {
+	public String cadastrando() throws ClassNotFoundException, IOException, ExcecaoArquivo {
 		Exercicio ex = new Exercicio();
 
 		ex.setContraIndicacao(contraIndicacao);

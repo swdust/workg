@@ -9,11 +9,13 @@ import javax.swing.JTextField;
 
 import br.com.novaroma.workoutguider.apresentacao.cliente.Principal;
 import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
@@ -138,7 +140,12 @@ public class TelaCadastroTreinador extends JPanel {
 				CadastroUsuario cad = new CadastroUsuario(Nome.getText(), Login.getText(), senha, confirmeSenha,
 						Idade.getText(), Endereco.getText(), Email.getText(), Telefone.getText(), Cpf.getText());
 
-				JOptionPane.showMessageDialog(null, cad.verificaCadastroT());
+				try {
+					JOptionPane.showMessageDialog(null, cad.verificaCadastroT());
+				} catch (HeadlessException | ExcecaoArquivo e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 
 			}
 		});

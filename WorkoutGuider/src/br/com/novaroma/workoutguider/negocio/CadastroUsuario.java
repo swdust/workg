@@ -7,6 +7,7 @@ import br.com.novaroma.workoutguider.apresentacao.cliente.TelaLogin;
 import br.com.novaroma.workoutguider.dados.ArquivoGeral;
 import br.com.novaroma.workoutguider.entidades.Cliente;
 import br.com.novaroma.workoutguider.entidades.Treinador;
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
 import br.com.novaroma.workoutguider.utils.UsuarioUtil;
 
 public class CadastroUsuario {
@@ -56,7 +57,7 @@ public class CadastroUsuario {
 		this.cpf = cpf;
 	}
 
-	public String verificaAltCadastro() {
+	public String verificaAltCadastro() throws ExcecaoArquivo{
 		UsuarioNegocio verifique = new UsuarioNegocio();
 		try {
 			if (!verifique.existeLogin(login) || login.equals(TelaLogin.c1.getLogin())) {
@@ -108,7 +109,7 @@ public class CadastroUsuario {
 		}
 	}
 
-	public String verificaCadastro() {
+	public String verificaCadastro() throws ExcecaoArquivo {
 		UsuarioNegocio verifique = new UsuarioNegocio();
 		try {
 			if (!verifique.existeLogin(login)) {
@@ -160,7 +161,7 @@ public class CadastroUsuario {
 		}
 	}
 
-	public String verificaCadastroT() {
+	public String verificaCadastroT() throws ExcecaoArquivo {
 		UsuarioNegocio verifique = new UsuarioNegocio();
 
 		try {
@@ -202,7 +203,7 @@ public class CadastroUsuario {
 		}
 	}
 
-	public String cadastrando() throws ClassNotFoundException, IOException {
+	public String cadastrando() throws ClassNotFoundException, IOException, ExcecaoArquivo {
 		Match mt = new Match();
 		Cliente c1 = new Cliente();
 
@@ -233,7 +234,7 @@ public class CadastroUsuario {
 		}
 	}
 
-	public String alterando() throws ClassNotFoundException, IOException {
+	public String alterando() throws ClassNotFoundException, IOException, ExcecaoArquivo {
 		Match mt = new Match();
 		Cliente c1 = new Cliente();
 
@@ -264,7 +265,7 @@ public class CadastroUsuario {
 		}
 	}
 
-	public String cadastrandoT() {
+	public String cadastrandoT() throws ExcecaoArquivo {
 
 		Treinador t1 = new Treinador();
 

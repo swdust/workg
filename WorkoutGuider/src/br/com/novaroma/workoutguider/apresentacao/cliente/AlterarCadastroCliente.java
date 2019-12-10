@@ -2,6 +2,7 @@ package br.com.novaroma.workoutguider.apresentacao.cliente;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.novaroma.workoutguider.excecao.ExcecaoArquivo;
 import br.com.novaroma.workoutguider.negocio.CadastroUsuario;
 import br.com.novaroma.workoutguider.utils.CPF;
 import java.awt.event.FocusAdapter;
@@ -279,7 +281,12 @@ public class AlterarCadastroCliente extends JPanel {
 						Idade.getText(), Endereco.getText(), Email.getText(), Telefone.getText(), CPF.getText(),
 						Double.parseDouble(Altura.getText()), Double.parseDouble(Peso.getText()),
 						Integer.parseInt(Tempo.getText()), doencas);
-				JOptionPane.showMessageDialog(null, cad1.verificaAltCadastro());
+				try {
+					JOptionPane.showMessageDialog(null, cad1.verificaAltCadastro());
+				} catch (HeadlessException | ExcecaoArquivo e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
