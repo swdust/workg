@@ -143,6 +143,19 @@ public class MenuCliente extends JFrame {
 		JMenuItem mntmAtualizarProgresso = new JMenuItem("Progresso");
 		mntmAtualizarProgresso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Progresso progresso;
+				try {
+					progresso = new Progresso();
+					progresso.setBounds(0, 0, 1274, 670);
+					layeredPane.removeAll();
+					layeredPane.add(progresso);
+					layeredPane.repaint();
+					layeredPane.revalidate();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				
 			}
 		});
