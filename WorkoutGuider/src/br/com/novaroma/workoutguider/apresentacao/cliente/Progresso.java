@@ -43,7 +43,7 @@ public class Progresso extends JPanel {
 				c1.setDiasTreinados(dias);
 				ArquivoGeral arquivo = new ArquivoGeral(c1);
 				try {
-					arquivo.alteraObjeto(UsuarioUtil.retornaIndexCliente(c1.getNome()), c1);
+					arquivo.alteraObjeto(UsuarioUtil.retornaIndexCliente(c1.getLogin()), c1);
 					progressBar.setValue(dias);
 					progressBar.setStringPainted(true);
 				} catch (ClassNotFoundException e) {

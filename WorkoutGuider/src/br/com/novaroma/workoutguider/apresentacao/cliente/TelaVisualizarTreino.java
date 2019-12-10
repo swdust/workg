@@ -65,8 +65,8 @@ public class TelaVisualizarTreino extends JPanel {
 		
 		JTextPane txtpnTreinoMensal = new JTextPane();
 		txtpnTreinoMensal.setFont(new Font("Verdana", Font.PLAIN, 30));
-		txtpnTreinoMensal.setText("Seu Treino");
-		txtpnTreinoMensal.setBounds(561, 122, 170, 53);
+		txtpnTreinoMensal.setText("Seu Treino Di\u00E1rio");
+		txtpnTreinoMensal.setBounds(495, 122, 302, 53);
 		add(txtpnTreinoMensal);
 		scrollPane.setVisible(true);
 
